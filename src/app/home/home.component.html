@@ -1,0 +1,16 @@
+<div class="container-fluid pt-2">
+
+  <h1 class="h1 fw-bold">Channel Center</h1>
+
+  <div class="mx-0 px-0 nav-bar">
+    <a routerLink="/" class="nav-item" [class.nav-item-active]="currentRoute === '/'">Services</a>
+    <a routerLink="/doctor" class="nav-item" [class.nav-item-active]="currentRoute === '/doctor'">Doctors</a>
+    <a routerLink="/patient" class="nav-item" [class.nav-item-active]="currentRoute === '/patient'">Patients</a>
+    <a routerLink="/appoinment" class="nav-item" [class.nav-item-active]="currentRoute === '/appoinment'">Appoinments</a>
+  </div>
+
+  <router-outlet></router-outlet>
+
+</div>
+
+

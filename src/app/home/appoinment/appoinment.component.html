@@ -1,0 +1,50 @@
+<div *ngIf="!toggle; else appoinmentForm">
+  <h2> Appoinments List</h2>
+  <br/>
+<tr>
+  <td>
+  <button (click)="createAppointment()" class="btn btn-dark">Add New Appoinment</button>
+  </td>
+  <td>
+  </td>
+</tr>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th> Doctor Name</th>
+      <th> Patient Name</th>
+      <th> Patient Phone</th>
+      <th> Appoinment Number</th>
+      <th> Appoinment Date</th>
+      <th> Appoinment Time</th>
+      <th> Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appoinment of appointments">
+      <td> {{ appoinment.doctorname}} </td>
+      <td> {{ appoinment.patientname }} </td>
+      <td> {{ appoinment.phone }} </td>
+      <td> {{ appoinment.appoinmentnumber }} </td>
+      <td>{{appoinment.date}}</td>
+      <td>{{appoinment.time}}</td>
+      <td>
+        <button (click)="updateAppointment(appoinment)" class="btn btn-info"> Update</button>
+        <button (click)="deleteAppointment(appoinment.id)" class="btn btn-danger" style="margin-left: 10px"> Delete</button>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+<ng-template #appoinmentForm>
+  <h2>Add Appoinment</h2>
+  <br />
+  <button class="btn btn-info" (click)="toggle = !toggle">Appoinments List</button><br/><br/>
+  <app-create-appoinment (updated)="updated($event)" [appoinment]="appointment"></app-create-appoinment>
+</ng-template>
+
+
+
+

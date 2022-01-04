@@ -1,0 +1,41 @@
+<div *ngIf="!toggle; else doctorForm">
+  <h2> Doctor List</h2>
+  <br/>
+
+  <button (click)="createDoctor()" class="btn btn-dark">Add New Doctor</button>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th> Name</th>
+      <th> Description</th>
+      <th> Email Id</th>
+      <th> Phone</th>
+      <th> Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let doctor of doctors ">
+      <td> {{ doctor.name}} </td>
+      <td> {{ doctor.description}} </td>
+      <td> {{ doctor.emailId }} </td>
+      <td> {{ doctor.phone }} </td>
+      <td>
+        <button (click)="updateDoctor(doctor)" class="btn btn-info"> Update</button>
+        <button (click)="deleteDoctor(doctor.id)" class="btn btn-danger" style="margin-left: 10px"> Delete</button>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<ng-template #doctorForm>
+  <h2>Add Doctor</h2>
+  <br />
+  <button class="btn btn-info" (click)="toggle = !toggle">Doctors List</button><br/><br/>
+  <app-create-doctor (updated)="updated($event)" [doctor]="doctor" ></app-create-doctor>
+</ng-template>
+
+
