@@ -1,0 +1,48 @@
+
+<form [formGroup]="appoinmentForm" >
+  <div class="panel panel-primary">
+    <div class="panel-body">
+  <div class="mb-3" >
+    <label for="doctorname" class="form-label"><b>Doctor Name</b></label>
+    <input type="text" class="form-control" id="doctorname" formControlName="doctorname" [class.is-invalid]="doctorname!.touched && doctorname!.invalid" />
+    <div class="invalid-feedback">Doctor name is required.</div>
+  </div>
+
+  <div class="mb-3" >
+    <label for="patientname" class="form-label"><b>Patient Name</b></label>
+    <input type="text" class="form-control" id="patientname" formControlName="patientname" [class.is-invalid]="patientname!.touched && patientname!.invalid" />
+    <div class="invalid-feedback">Patient name is required.</div>
+  </div>
+
+  <div class="mb-3" >
+    <label for="phone" class="form-label"><b>Patient Contact</b></label>
+    <input type="text" class="form-control" id="phone" formControlName="phone" [class.is-invalid]="phone!.touched && phone!.invalid" />
+    <div class="invalid-feedback">Contact Number is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="appoinmentnumber" class="form-label"><b>Appoinment Number</b></label>
+    <input type="text" class="form-control" id="appoinmentnumber" formControlName="appoinmentnumber" [class.is-invalid]="appoinmentnumber!.touched && appoinmentnumber!.invalid" />
+    <div class="invalid-feedback">Appoinment Number is  required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="time" class="form-label"><b>Appoinment Time</b></label>
+    <input type="time" class="form-control" id="time" formControlName="time" [class.is-invalid]="time!.touched && time!.invalid" />
+    <div class="invalid-feedback">Appoinment Time is  required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label"><b>Appoinment Date</b></label>
+    <input type="date" class="form-control"   id="date" formControlName="date" [class.is-invalid]="date!.touched && date!.invalid" />
+    <div class="invalid-feedback">Appoinment Date is  required.</div>
+  </div>
+  <br>
+
+  <button class="btn btn-primary" (click)="saveAppoinment()"><span *ngIf="progress"></span>Save</button>
+    </div>
+  </div>
+</form>
+
+
+

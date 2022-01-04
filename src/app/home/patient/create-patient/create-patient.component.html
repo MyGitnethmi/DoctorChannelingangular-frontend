@@ -1,0 +1,40 @@
+<form [formGroup]="patientForm">
+
+  <div class="mb-3">
+    <label for="first-name" class="form-label"><b>First Name</b></label>
+    <input type="text" class="form-control" id="first-name" formControlName="firstName"
+           [class.is-invalid]="firstName!.touched && firstName!.invalid"/>
+    <div class="invalid-feedback">First name is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="last-name" class="form-label"><b>Last Name</b></label>
+    <input type="text" class="form-control" id="last-name" formControlName="lastName"
+           [class.is-invalid]="lastName!.touched && lastName!.invalid"/>
+    <div class="invalid-feedback">Last name is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="emailId" class="form-label"><b>Email Id</b></label>
+    <input type="text" class="form-control" id="emailId" formControlName="emailId"
+           [class.is-invalid]="emailId!.touched && emailId!.invalid"/>
+    <div class="invalid-feedback">Email is required.</div>
+  </div>
+
+  <div>
+    <label for="phone" class="form-label"><b>Phone Number</b></label>
+    <input type="text" class="form-control" id="phone" formControlName="phone"
+           [class.is-invalid]="phone!.touched && phone!.invalid"/>
+    <div class="invalid-feedback">Phone Number is required.</div>
+  </div>
+  <br>
+  <br>
+
+  <div *ngIf="error" class="alert alert-danger mx-3">
+    Error saving data.
+  </div>
+
+  <button class="btn btn-primary" (click)="savePatient()"><span *ngIf="progress"></span>Save</button>
+
+</form>
+

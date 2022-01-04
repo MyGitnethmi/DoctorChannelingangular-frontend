@@ -1,0 +1,30 @@
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+
+  <div class="mb-3">
+    <label for="name" class="form-label"><b>Docctor Name</b></label>
+    <input type="text" class="form-control" id="name" formControlName="name" [class.is-invalid]="name!.touched && name!.invalid" />
+    <div class="invalid-feedback">First name is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label"><b>Description</b></label>
+    <input type="text" class="form-control" id="description" formControlName="description" [class.is-invalid]="description!.touched && description!.invalid" />
+    <div class="invalid-feedback">Description is required.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="emailId" class="form-label"><b>Email Id</b></label>
+    <input type="text" class="form-control" id="emailId" formControlName="emailId" [class.is-invalid]="emailId!.touched && emailId!.invalid" />
+    <div class="invalid-feedback">Email is required.</div>
+  </div>
+
+  <div>
+    <label for="phone" class="form-label"><b>Phone Number</b></label>
+    <input type="text" class="form-control" id="phone" formControlName="phone" [class.is-invalid]="phone!.touched && phone!.invalid" />
+    <div class="invalid-feedback">Phone Number is  required.</div>
+  </div>
+  <br>
+  <br>
+  <button class="btn btn-primary" type="submit">Save</button>
+
+</form>
